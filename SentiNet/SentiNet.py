@@ -44,6 +44,28 @@ class SentiNet(object):
         return self.sentiSynSetList[id]
 
     """
+    Adds specified SentiSynSet to the SentiSynSet list.
+
+    PARAMETERS
+    ----------
+    sentiSynSet : SentiSynSet
+        SentiSynSet to be added
+    """
+    def addSentiSynSet(self, sentiSynSet : SentiSynSet):
+        self.sentiSynSetList[sentiSynSet.getId()] = sentiSynSet
+
+    """
+    Removes specified SentiSynSet from the SentiSynSet list.
+
+    PARAMETERS
+    ----------
+    sentiSynSet : SentiSynSet
+        SentiSynSet to be removed
+    """
+    def removeSentiSynSet(self, sentiSynSet : SentiSynSet):
+        del self.sentiSynSetList[sentiSynSet.getId()]
+
+    """
     Constructs and returns a list of ids, which are the ids of the SentiSynSets having polarity
     polarityType.
     
@@ -98,3 +120,19 @@ class SentiNet(object):
 
     def getNeutrals(self) -> list:
         return self.getPolarity(PolarityType.PolarityType.NEUTRAL)
+
+    """
+    Method to write SynSets to the specified file in the XML format.
+
+    PARAMETERS
+    ----------
+    fileName : str
+        file name to write XML files
+    """
+    def saveAsXml(self, fileName: str):
+        outfile = open(fileName, 'w')
+        outfile.write("<SYNSETS>\n")
+        for synSet in self.sentiSynSetList.values():
+            synSet.saveAsXml(outfile)
+        outfile.write("</SYNSETS>\n")
+        outfile.close()

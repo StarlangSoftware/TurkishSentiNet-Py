@@ -71,3 +71,18 @@ class SentiSynSet(object):
                 return PolarityType.PolarityType.NEGATIVE
             else:
                 return PolarityType.PolarityType.NEUTRAL
+
+    """
+    Method to write SynSets to the specified file in the XML format.
+
+    PARAMETERS
+    ----------
+    outfile : file 
+        File to write XML files
+    """
+    def saveAsXml(self, outfile):
+        outfile.write("<SYNSET>")
+        outfile.write("<ID>" + self.id + "</ID>")
+        outfile.write("<PSCORE>" + self.positiveScore.__str__() + "</PSCORE>")
+        outfile.write("<NSCORE>" + self.negativeScore.__str__() + "</NSCORE>")
+        outfile.write("</SYNSET>\n")
