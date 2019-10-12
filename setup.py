@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='NlpToolkit-SentiNet',
-    version='1.0.1',
+    version='1.0.2',
     packages=['SentiNet'],
     url='https://github.com/olcaytaner/TurkishSentiNet-Py',
     license='',
