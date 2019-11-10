@@ -5,12 +5,14 @@ import xml.etree.ElementTree
 
 class SentiNet(object):
 
+    _sentiSynSetList: dict
+
     """
     Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
     sentiSynSet read, it adds it to the sentiSynSetList.
     """
     def __init__(self):
-        self.sentiSynSetList = {}
+        self._sentiSynSetList = {}
         root = xml.etree.ElementTree.parse("turkish_sentinet.xml").getroot()
         for sentiSynSet in root:
             id = ""
@@ -25,7 +27,7 @@ class SentiNet(object):
                     else:
                         negativeScore = part.text
             if id != "":
-                self.sentiSynSetList[id] = SentiSynSet.SentiSynSet(id, positiveScore, negativeScore)
+                self._sentiSynSetList[id] = SentiSynSet.SentiSynSet(id, positiveScore, negativeScore)
 
     """
     Accessor for a single SentiSynSet.
@@ -41,7 +43,7 @@ class SentiNet(object):
         SentiSynSet with the given id.
     """
     def getSentiSynSet(self, id : str) -> SentiSynSet:
-        return self.sentiSynSetList[id]
+        return self._sentiSynSetList[id]
 
     """
     Adds specified SentiSynSet to the SentiSynSet list.
@@ -52,7 +54,7 @@ class SentiNet(object):
         SentiSynSet to be added
     """
     def addSentiSynSet(self, sentiSynSet : SentiSynSet):
-        self.sentiSynSetList[sentiSynSet.getId()] = sentiSynSet
+        self._sentiSynSetList[sentiSynSet.getId()] = sentiSynSet
 
     """
     Removes specified SentiSynSet from the SentiSynSet list.
@@ -63,7 +65,7 @@ class SentiNet(object):
         SentiSynSet to be removed
     """
     def removeSentiSynSet(self, sentiSynSet : SentiSynSet):
-        del self.sentiSynSetList[sentiSynSet.getId()]
+        del self._sentiSynSetList[sentiSynSet.getId()]
 
     """
     Constructs and returns a list of ids, which are the ids of the SentiSynSets having polarity
@@ -81,7 +83,7 @@ class SentiNet(object):
     """
     def getPolarity(self, polarityType : PolarityType.PolarityType) -> list:
         result = []
-        for sentiSynSet in self.sentiSynSetList.values():
+        for sentiSynSet in self._sentiSynSetList.values():
             if sentiSynSet.getPolarity() == polarityType:
                 result.append(sentiSynSet.getId())
         return result
@@ -132,7 +134,7 @@ class SentiNet(object):
     def saveAsXml(self, fileName: str):
         outfile = open(fileName, 'w')
         outfile.write("<SYNSETS>\n")
-        for synSet in self.sentiSynSetList.values():
+        for synSet in self._sentiSynSetList.values():
             synSet.saveAsXml(outfile)
         outfile.write("</SYNSETS>\n")
         outfile.close()
