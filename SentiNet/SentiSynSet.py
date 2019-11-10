@@ -3,9 +3,9 @@ from SentiNet import PolarityType
 
 class SentiSynSet(object):
 
-    _id: str
-    _positiveScore: float
-    _negativeScore: float
+    __id: str
+    __positiveScore: float
+    __negativeScore: float
 
     """
     Constructor of SentiSynSet. Gets input id, positiveScore, negativeScore and sets all corresponding attributes.
@@ -20,9 +20,9 @@ class SentiSynSet(object):
         Negative score of the SentiSynSet.
     """
     def __init__(self, id: str, positiveScore: float, negativeScore: float):
-        self._id = id
-        self._positiveScore = positiveScore
-        self._negativeScore = negativeScore
+        self.__id = id
+        self.__positiveScore = positiveScore
+        self.__negativeScore = negativeScore
 
     """
     Accessor for the positiveScore attribute.
@@ -33,7 +33,7 @@ class SentiSynSet(object):
         PositiveScore of the SentiSynSet.
     """
     def getPositiveScore(self) -> float:
-        return self._positiveScore
+        return self.__positiveScore
 
     """
     Accessor for the negativeScore attribute.
@@ -44,7 +44,7 @@ class SentiSynSet(object):
         NegativeScore of the SentiSynSet.
     """
     def getNegativeScore(self) -> float:
-        return self._negativeScore
+        return self.__negativeScore
 
     """
     Accessor for the id attribute.
@@ -55,7 +55,7 @@ class SentiSynSet(object):
         Id of the SentiSynSet.
     """
     def getId(self) -> str:
-        return self._id
+        return self.__id
 
     """
     Returns the polarityType of the sentiSynSet. If the positive score is larger than the negative score, the polarity 
@@ -68,10 +68,10 @@ class SentiSynSet(object):
         PolarityType of the sentiSynSet.
     """
     def getPolarity(self) -> PolarityType.PolarityType:
-        if self._positiveScore > self._negativeScore:
+        if self.__positiveScore > self.__negativeScore:
             return PolarityType.PolarityType.POSITIVE
         else:
-            if self._positiveScore < self._negativeScore:
+            if self.__positiveScore < self.__negativeScore:
                 return PolarityType.PolarityType.NEGATIVE
             else:
                 return PolarityType.PolarityType.NEUTRAL
@@ -86,7 +86,7 @@ class SentiSynSet(object):
     """
     def saveAsXml(self, outfile):
         outfile.write("<SYNSET>")
-        outfile.write("<ID>" + self._id + "</ID>")
-        outfile.write("<PSCORE>" + self._positiveScore.__str__() + "</PSCORE>")
-        outfile.write("<NSCORE>" + self._negativeScore.__str__() + "</NSCORE>")
+        outfile.write("<ID>" + self.__id + "</ID>")
+        outfile.write("<PSCORE>" + self.__positiveScore.__str__() + "</PSCORE>")
+        outfile.write("<NSCORE>" + self.__negativeScore.__str__() + "</NSCORE>")
         outfile.write("</SYNSET>\n")
