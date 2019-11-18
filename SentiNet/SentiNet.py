@@ -11,9 +11,11 @@ class SentiNet(object):
     Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
     sentiSynSet read, it adds it to the sentiSynSetList.
     """
-    def __init__(self):
+    def __init__(self, fileName=None):
         self.__sentiSynSetList = {}
-        root = xml.etree.ElementTree.parse("turkish_sentinet.xml").getroot()
+        if fileName is None:
+            fileName = "turkish_sentinet.xml"
+        root = xml.etree.ElementTree.parse(fileName).getroot()
         for sentiSynSet in root:
             id = ""
             positiveScore = 0.0
