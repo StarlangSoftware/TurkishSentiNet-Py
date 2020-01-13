@@ -134,7 +134,7 @@ class SentiNet(object):
         file name to write XML files
     """
     def saveAsXml(self, fileName: str):
-        outfile = open(fileName, 'w')
+        outfile = open(fileName, 'w', encoding='utf8')
         outfile.write("<SYNSETS>\n")
         for synSet in self.__sentiSynSetList.values():
             synSet.saveAsXml(outfile)
