@@ -1,10 +1,10 @@
 from enum import Enum, auto
 
 
-"""
- * Enumerator class for three polarity types.
-"""
 class PolarityType(Enum):
+    """
+     * Enumerator class for three polarity types.
+    """
     POSITIVE = auto()
     NEGATIVE = auto()
     NEUTRAL = auto()
