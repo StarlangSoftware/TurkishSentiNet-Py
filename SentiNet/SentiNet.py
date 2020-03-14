@@ -69,7 +69,7 @@ class SentiNet(object):
         """
         del self.__sentiSynSetList[sentiSynSet.getId()]
 
-    def getPolarity(self, polarityType: PolarityType.PolarityType) -> list:
+    def getPolarity(self, polarityType: PolarityType) -> list:
         """
         Constructs and returns a list of ids, which are the ids of the SentiSynSets having polarity
         polarityType.
@@ -99,7 +99,7 @@ class SentiNet(object):
         list
             A list of ids of all positive SentiSynSets.
         """
-        return self.getPolarity(PolarityType.PolarityType.POSITIVE)
+        return self.getPolarity(PolarityType.POSITIVE)
 
     def getNegatives(self) -> list:
         """
@@ -110,7 +110,7 @@ class SentiNet(object):
         list
             A list of ids of all negative SentiSynSets.
         """
-        return self.getPolarity(PolarityType.PolarityType.NEGATIVE)
+        return self.getPolarity(PolarityType.NEGATIVE)
 
     def getNeutrals(self) -> list:
         """
@@ -121,7 +121,7 @@ class SentiNet(object):
         list
             A list of ids of all neutral SentiSynSets.
         """
-        return self.getPolarity(PolarityType.PolarityType.NEUTRAL)
+        return self.getPolarity(PolarityType.NEUTRAL)
 
     def saveAsXml(self, fileName: str):
         """

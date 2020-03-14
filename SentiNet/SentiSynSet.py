@@ -57,7 +57,7 @@ class SentiSynSet(object):
         """
         return self.__id
 
-    def getPolarity(self) -> PolarityType.PolarityType:
+    def getPolarity(self) -> PolarityType:
         """
         Returns the polarityType of the sentiSynSet. If the positive score is larger than the negative score, the
         polarity is positive; if the negative score is larger than the positive score, the polarity is negative; if
@@ -69,12 +69,12 @@ class SentiSynSet(object):
             PolarityType of the sentiSynSet.
         """
         if self.__positiveScore > self.__negativeScore:
-            return PolarityType.PolarityType.POSITIVE
+            return PolarityType.POSITIVE
         else:
             if self.__positiveScore < self.__negativeScore:
-                return PolarityType.PolarityType.NEGATIVE
+                return PolarityType.NEGATIVE
             else:
-                return PolarityType.PolarityType.NEUTRAL
+                return PolarityType.NEUTRAL
 
     def saveAsXml(self, outfile):
         """
