@@ -51,3 +51,37 @@ Steps for opening the cloned project:
 **From IDE**
 
 After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run SentiNet.
+
+Detailed Description
+============
++ [SentiNet](#sentinet)
++ [SentiSynSet](#sentisynset)
+
+## SentiNet
+
+Duygu sözlüğünü yüklemek için
+
+	a = SentiNet()
+
+Belirli bir alana ait duygu sözlüğünü yüklemek için
+
+	SentiNet(String fileName)
+	a = SentiNet("dosya.txt");
+
+Belirli bir synsete ait duygu synsetini elde etmek için
+
+	SentiSynSet getSentiSynSet(String id)
+
+## SentiSynSet
+
+Bir SentiSynset elimizdeyken onun pozitif skorunu
+
+	double getPositiveScore()
+
+negatif skorunu
+
+	double getNegativeScore()
+
+polaritysini
+
+	PolarityType getPolarity()
