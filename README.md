@@ -65,23 +65,23 @@ Duygu sözlüğünü yüklemek için
 
 Belirli bir alana ait duygu sözlüğünü yüklemek için
 
-	SentiNet(String fileName)
-	a = SentiNet("dosya.txt");
+	SentiNet(fileName: str)
+	a = SentiNet("dosya.txt")
 
 Belirli bir synsete ait duygu synsetini elde etmek için
 
-	SentiSynSet getSentiSynSet(String id)
+	getSentiSynSet(self, _id: str) -> SentiSynSet
 
 ## SentiSynSet
 
 Bir SentiSynset elimizdeyken onun pozitif skorunu
 
-	double getPositiveScore()
+	getPositiveScore(self) -> float
 
 negatif skorunu
 
-	double getNegativeScore()
+	getNegativeScore(self) -> float
 
 polaritysini
 
-	PolarityType getPolarity()
+	getPolarity(self) -> PolarityType
