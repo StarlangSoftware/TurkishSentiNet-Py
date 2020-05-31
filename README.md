@@ -8,8 +8,6 @@ Turkish SentiNet (HisNet) is a Turkish polarity dictionary made up of 80.000 syn
 
 For Developers
 ============
-You can also see either [Java](https://github.com/olcaytaner/TurkishSentiNet) 
-or [C++](https://github.com/olcaytaner/TurkishSentiNet-CPP) repository.
 
 ## Requirements
 
@@ -37,7 +35,7 @@ Use Git for cloning the code to your local or below line for Ubuntu:
 
 A directory called SentiNet will be created. Or you can use below link for exploring the code:
 
-	git clone https://github.com/olcaytaner/TurkishSentiNet-Py.git
+	git clone https://github.com/starlangsoftware/TurkishSentiNet-Py.git
 
 ## Open project with Pycharm IDE
 
@@ -48,13 +46,6 @@ Steps for opening the cloned project:
 * Choose `TurkishSentiNet-PY` file
 * Select open as project option
 * Couple of seconds, dependencies will be downloaded. 
-
-
-## Compile
-
-**From IDE**
-
-After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run SentiNet.
 
 Detailed Description
 ============
