@@ -3,7 +3,7 @@ import unittest
 from SentiNet.SentiNet import SentiNet
 
 
-class MyTestCase(unittest.TestCase):
+class SentiSynSetTest(unittest.TestCase):
 
     def setUp(self) -> None:
         self.sentiNet = SentiNet("../turkish_sentinet.xml")
