@@ -40,3 +40,38 @@ Steps for opening the cloned project:
 * Choose `TurkishSentiNet-PY` file
 * Select open as project option
 * Couple of seconds, dependencies will be downloaded. 
+
+Detailed Description
+============
+
++ [SentiNet](#sentinet)
++ [SentiSynSet](#sentisynset)
+
+## SentiNet
+
+Duygu sözlüğünü yüklemek için
+
+	a = SentiNet()
+
+Belirli bir alana ait duygu sözlüğünü yüklemek için
+
+	SentiNet(fileName: str)
+	a = SentiNet("dosya.txt")
+
+Belirli bir synsete ait duygu synsetini elde etmek için
+
+	getSentiSynSet(self, _id: str) -> SentiSynSet
+
+## SentiSynSet
+
+Bir SentiSynset elimizdeyken onun pozitif skorunu
+
+	getPositiveScore(self) -> float
+
+negatif skorunu
+
+	getNegativeScore(self) -> float
+
+polaritysini
+
+	getPolarity(self) -> PolarityType
