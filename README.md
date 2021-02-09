@@ -104,3 +104,12 @@ negatif skorunu
 polaritysini
 
 	getPolarity(self) -> PolarityType
+
+# Cite
+
+	@inproceedings{ozcelik21,
+ 	title={{H}is{N}et: {A} {P}olarity {L}exicon based on {W}ord{N}et for {E}motion {A}nalysis},
+ 	year={2021},
+ 	author={M. Ozcelik and B. N. Arican and O. Bakay and E. Sarmis and N. B. Bayazit and O. Ergelen and O. T. Y{\i}ld{\i}z},
+ 	booktitle={Proceedings of GWC 2021}
+ 	}
