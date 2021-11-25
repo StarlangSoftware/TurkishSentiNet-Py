@@ -16,7 +16,7 @@ class SentiNet(object):
         """
         self.__sentiSynSetList = {}
         if fileName is None:
-            fileName = pkg_resources.resource_filename(__name__, '../turkish_sentinet.xml')
+            fileName = pkg_resources.resource_filename(__name__, 'data/turkish_sentinet.xml')
         root = xml.etree.ElementTree.parse(fileName).getroot()
         for sentiSynSet in root:
             _id = ""

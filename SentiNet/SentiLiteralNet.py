@@ -16,7 +16,7 @@ class SentiLiteralNet(object):
         """
         self.__sentiLiteralList = {}
         if fileName is None:
-            fileName = pkg_resources.resource_filename(__name__, '../turkish_sentiliteralnet.xml')
+            fileName = pkg_resources.resource_filename(__name__, 'data/turkish_sentiliteralnet.xml')
         root = xml.etree.ElementTree.parse(fileName).getroot()
         for sentiLiteral in root:
             _name = ""
