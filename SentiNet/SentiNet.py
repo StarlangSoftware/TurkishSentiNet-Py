@@ -1,5 +1,7 @@
-from SentiNet.SentiSynSet import SentiSynSet
+import pkg_resources
+
 from SentiNet.PolarityType import PolarityType
+from SentiNet.SentiSynSet import SentiSynSet
 import xml.etree.ElementTree
 
 
@@ -14,7 +16,7 @@ class SentiNet(object):
         """
         self.__sentiSynSetList = {}
         if fileName is None:
-            fileName = "turkish_sentinet.xml"
+            fileName = pkg_resources.resource_filename(__name__, '../turkish_sentinet.xml')
         root = xml.etree.ElementTree.parse(fileName).getroot()
         for sentiSynSet in root:
             _id = ""
