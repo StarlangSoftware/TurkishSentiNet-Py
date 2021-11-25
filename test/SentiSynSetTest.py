@@ -6,7 +6,7 @@ from SentiNet.SentiNet import SentiNet
 class SentiSynSetTest(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.sentiNet = SentiNet("../SentiNet/data/turkish_sentinet.xml")
+        self.sentiNet = SentiNet()
 
     def test_saveAsXml(self):
         outFile = open("test.xml", "w")
