@@ -30,7 +30,7 @@ Subsequently, a second labeling was further made on positive and negative words 
 Video Lectures
 ============
 
-[<img src="https://github.com/StarlangSoftware/TurkishSentiNet/blob/master/video1.jpg" width="50%">](https://youtu.be/CdHSwgq2lTE)[<img src="https://github.com/StarlangSoftware/TurkishSentiNet/blob/master/video2.jpg" width="50%">](https://youtu.be/_tbrvPlG87Y)
+[<img src="https://github.com/StarlangSoftware/TurkishSentiNet/blob/master/video1.jpg" width="50%">](https://youtu.be/CdHSwgq2lTE)[<img src="https://github.com/StarlangSoftware/TurkishSentiNet/blob/master/video2.jpg" width="50%">](https://youtu.be/_tbrvPlG87Y)[<img src="https://github.com/StarlangSoftware/TurkishSentiNet/blob/master/video3.jpg" width="50%">](https://youtu.be/CUbNz34Ac5c)
 
 For Developers
 ============
