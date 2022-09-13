@@ -7,31 +7,31 @@ import xml.etree.ElementTree
 
 class SentiNet(object):
 
-    __sentiSynSetList: dict
+    __senti_synset_list: dict
 
-    def __init__(self, fileName=None):
+    def __init__(self, file_name=None):
         """
-        Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file from the resources directory. For each
+        Constructor of Turkish SentiNet. Reads the turkish_sentinet.xml file from the directory resources. For each
         sentiSynSet read, it adds it to the sentiSynSetList.
         """
-        self.__sentiSynSetList = {}
-        if fileName is None:
-            fileName = pkg_resources.resource_filename(__name__, 'data/turkish_sentinet.xml')
-        root = xml.etree.ElementTree.parse(fileName).getroot()
-        for sentiSynSet in root:
+        self.__senti_synset_list = {}
+        if file_name is None:
+            file_name = pkg_resources.resource_filename(__name__, 'data/turkish_sentinet.xml')
+        root = xml.etree.ElementTree.parse(file_name).getroot()
+        for senti_synset in root:
             _id = ""
-            positiveScore = 0.0
-            negativeScore = 0.0
-            for part in sentiSynSet:
+            positive_score = 0.0
+            negative_score = 0.0
+            for part in senti_synset:
                 if part.tag == "ID":
                     _id = part.text
                 else:
                     if part.tag == "PSCORE":
-                        positiveScore = part.text
+                        positive_score = part.text
                     else:
-                        negativeScore = part.text
+                        negative_score = part.text
             if _id != "":
-                self.__sentiSynSetList[_id] = SentiSynSet(_id, positiveScore, negativeScore)
+                self.__senti_synset_list[_id] = SentiSynSet(_id, positive_score, negative_score)
 
     def getSentiSynSet(self, _id: str) -> SentiSynSet:
         """
@@ -47,48 +47,48 @@ class SentiNet(object):
         SentiSynSet
             SentiSynSet with the given id.
         """
-        return self.__sentiSynSetList[_id]
+        return self.__senti_synset_list[_id]
 
-    def addSentiSynSet(self, sentiSynSet: SentiSynSet):
+    def addSentiSynSet(self, senti_synset: SentiSynSet):
         """
         Adds specified SentiSynSet to the SentiSynSet list.
 
         PARAMETERS
         ----------
-        sentiSynSet : SentiSynSet
+        senti_synset : SentiSynSet
             SentiSynSet to be added
         """
-        self.__sentiSynSetList[sentiSynSet.getId()] = sentiSynSet
+        self.__senti_synset_list[senti_synset.getId()] = senti_synset
 
-    def removeSentiSynSet(self, sentiSynSet: SentiSynSet):
+    def removeSentiSynSet(self, senti_synset: SentiSynSet):
         """
         Removes specified SentiSynSet from the SentiSynSet list.
 
         PARAMETERS
         ----------
-        sentiSynSet : SentiSynSet
+        senti_synset : SentiSynSet
             SentiSynSet to be removed
         """
-        del self.__sentiSynSetList[sentiSynSet.getId()]
+        del self.__senti_synset_list[senti_synset.getId()]
 
-    def getPolarity(self, polarityType: PolarityType) -> list:
+    def getPolarity(self, polarity_type: PolarityType) -> list:
         """
         Constructs and returns a list of ids, which are the ids of the SentiSynSets having polarity
         polarityType.
 
         PARAMETERS
         ----------
-        polarityType : PolarityType
+        polarity_type : PolarityType
             PolarityTypes of the searched SentiSynSets
 
         RETURNS
         -------
         list
-            A list of id having polarityType polarityType.
+            A list of id having PolarityType polarityType.
         """
         result = []
-        for sentiSynSet in self.__sentiSynSetList.values():
-            if sentiSynSet.getPolarity() == polarityType:
+        for sentiSynSet in self.__senti_synset_list.values():
+            if sentiSynSet.getPolarity() == polarity_type:
                 result.append(sentiSynSet.getId())
         return result
 
@@ -125,18 +125,18 @@ class SentiNet(object):
         """
         return self.getPolarity(PolarityType.NEUTRAL)
 
-    def saveAsXml(self, fileName: str):
+    def saveAsXml(self, file_name: str):
         """
         Method to write SynSets to the specified file in the XML format.
 
         PARAMETERS
         ----------
-        fileName : str
+        file_name : str
             file name to write XML files
         """
-        outfile = open(fileName, 'w', encoding='utf8')
+        outfile = open(file_name, 'w', encoding='utf8')
         outfile.write("<SYNSETS>\n")
-        for synSet in self.__sentiSynSetList.values():
+        for synSet in self.__senti_synset_list.values():
             synSet.saveAsXml(outfile)
         outfile.write("</SYNSETS>\n")
         outfile.close()

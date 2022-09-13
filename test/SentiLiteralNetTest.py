@@ -2,6 +2,7 @@ import unittest
 
 from SentiNet.SentiLiteralNet import SentiLiteralNet
 
+
 class SentiLiteralNetTest(unittest.TestCase):
 
     def setUp(self) -> None:
