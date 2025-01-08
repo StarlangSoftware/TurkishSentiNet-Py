@@ -35,7 +35,7 @@ Video Lectures
 For Developers
 ============
 
-You can also see [Cython](https://github.com/starlangsoftware/TurkishSentiNet-Cy), [Java](https://github.com/starlangsoftware/TurkishSentiNet), [C](https://github.com/starlangsoftware/TurkishSentiNet-C), [C++](https://github.com/starlangsoftware/TurkishSentiNet-CPP), [Swift](https://github.com/starlangsoftware/TurkishSentiNet-Swift), [Js](https://github.com/starlangsoftware/TurkishSentiNet-Js), or [C#](https://github.com/starlangsoftware/TurkishSentiNet-CS) repository.
+You can also see [Cython](https://github.com/starlangsoftware/TurkishSentiNet-Cy), [Java](https://github.com/starlangsoftware/TurkishSentiNet), [C](https://github.com/starlangsoftware/TurkishSentiNet-C), [C++](https://github.com/starlangsoftware/TurkishSentiNet-CPP), [Swift](https://github.com/starlangsoftware/TurkishSentiNet-Swift), [Js](https://github.com/starlangsoftware/TurkishSentiNet-Js), [Php](https://github.com/starlangsoftware/TurkishSentiNet-Php), or [C#](https://github.com/starlangsoftware/TurkishSentiNet-CS) repository.
 
 ## Requirements
 
